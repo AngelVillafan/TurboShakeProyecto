@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TurboShakeApp.MainPage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="#a551c3"></Setter>
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="PlaceholderColor" Value="#a551c3"></Setter>
+            <Setter Property="FontFamily" Value="Light"></Setter>
+        </Style>
+        <Style TargetType="Picker">
+            <Setter Property="TitleColor" Value="#a551c3"></Setter>
+            <Setter Property="FontFamily" Value="Light"></Setter>
+        </Style>
+        <Style TargetType="Border">
+            <Setter Property="BackgroundColor" Value="#ebebeb"></Setter>
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid BackgroundColor="#212121">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Border BackgroundColor="#212121"
+                    Grid.Row="0"
+                    StrokeThickness="0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="75"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Source="goshakersinfondo"
+                           Margin="10"
+                           MaximumWidthRequest="75"
+                           MaximumHeightRequest="75"
+                           Grid.Column="0"
+                           Grid.Row="0"></Image>
+                    <Label FontFamily="Bold"
+                           Grid.Column="1"
+                           Grid.Row="0"
+                           CharacterSpacing="1"
+                           TextColor="#ebebeb"
+                           FontSize="35"
+                           VerticalTextAlignment="Center">
+                        Go Shaker!
+                    </Label>
+
+                    <Label HorizontalOptions="Center"
+                       Grid.Row="1"
+                       Grid.ColumnSpan="2"
+                           FontFamily="Bold"
+                           Margin="0,0,0,10"
+                           FontSize="18">Responde algunas preguntas</Label>
+
+                </Grid>
+            </Border>
+            <StackLayout Grid.Row="2">
+                <Button BackgroundColor="#a551c3"
+                Margin="20,10,20, 0"
+                FontFamily="Bold"
+                TextTransform="Uppercase"
+                Text="Hacer batido"></Button>
+                <Label HorizontalTextAlignment="Center"
+                       Margin="0,10">Errores</Label>
+            </StackLayout>
+          
+            <ScrollView Grid.Row="1">
+                <VerticalStackLayout Spacing="5">
+
+
+                    <Border Margin="15,0"
+                            StrokeShape="RoundRectangle, 10"
+                            Padding="10">
+                        <VerticalStackLayout>
+                            <Label FontFamily="Light"
+                                   Padding="4,0,0,0">Nombre:</Label>
+                            <Entry Placeholder="Ingresa tu nombre"></Entry>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border Margin="15,0"
+                            StrokeShape="RoundRectangle, 10"
+                            Padding="10">
+                        <VerticalStackLayout>
+                            <Label FontFamily="Light"
+                                   Padding="4,0,0,0">Edad:</Label>
+                            <Entry Placeholder="Ingresa tu edad"
+                                   Keyboard="Numeric"></Entry>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border Margin="15,0"
+                            StrokeShape="RoundRectangle, 10"
+                            Padding="10">
+                        <VerticalStackLayout>
+                            <Label FontFamily="Light"
+                                   Padding="4,0,0,0">Peso (En Kg.):</Label>
+                            <Entry Placeholder="Ingresa tu peso"
+                                   Keyboard="Numeric"></Entry>
+                        </VerticalStackLayout>
+                    </Border>
+
+
+
+                    <Border Margin="15,0"
+                            StrokeShape="RoundRectangle, 10"
+                            Padding="10">
+                        <VerticalStackLayout>
+                            <Label FontFamily="Light"
+                                   Padding="4,0,0,0">Estatura (En cm.):</Label>
+                            <Entry Placeholder="Registra tu estatura"
+                                   Keyboard="Numeric"></Entry>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border Margin="15,0"
+                            StrokeShape="RoundRectangle, 10"
+                            Padding="10">
+                        <VerticalStackLayout>
+                            <Label FontFamily="Light"
+                                   Padding="4,0,0,0">Sexo:</Label>
+                            <Picker Title="Selecciona tu sexo">
+                                <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>Femenino</x:String>
+                                        <x:String>Masculino</x:String>
+                                    </x:Array>
+                                </Picker.ItemsSource>
+                            </Picker>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border Margin="15,0"
+                            StrokeShape="RoundRectangle, 10"
+                            Padding="10">
+                        <VerticalStackLayout>
+                            <Label FontFamily="Light"
+                                   Padding="4,0,0,0">Frecuencia de actividad fisica semanal:</Label>
+                            <Entry Placeholder="Cuantos dias a la semana hacer ejercicio"
+                               Keyboard="Numeric"></Entry>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border Margin="15,0"
+                            StrokeShape="RoundRectangle, 10"
+                            Padding="10">
+                        <VerticalStackLayout>
+                            <Label FontFamily="Light"
+                                   Padding="4,0,0,0">Objetivos:</Label>
+                            <Entry Placeholder="Escribe tu objetivo"></Entry>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border Margin="15,0"
+                            StrokeShape="RoundRectangle, 10"
+                            Padding="10">
+                        <VerticalStackLayout>
+                            <Label FontFamily="Light"
+                                   Padding="4,0,0,0">Alergias:</Label>
+                            <Entry Placeholder="En caso de tener, escribelas aqui"></Entry>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border Margin="15,0"
+                            StrokeShape="RoundRectangle, 10"
+                            Padding="10">
+                        <VerticalStackLayout>
+                            <Label FontFamily="Light"
+                                   Padding="4,0,0,0">Preferencias dieteticas:</Label>
+                            <Picker Title="Selecciona tu preferencia dietetica">
+                                <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>Como de todo</x:String>
+                                        <x:String>Vegana</x:String>
+                                        <x:String>Vegetariana</x:String>
+                                        <x:String>Sin gluten</x:String>
+                                        <x:String>Otra</x:String>
+                                    </x:Array>
+                                </Picker.ItemsSource>
+                            </Picker>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border Margin="15,0"
+                            StrokeShape="RoundRectangle, 10"
+                            Padding="10">
+                        <VerticalStackLayout>
+                            <Label FontFamily="Light"
+                                   Padding="4,0,0,0">Intolerancia a la lactosa:</Label>
+                            <Picker Title="Selecciona tu situacion">
+                                <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>Si ingiero lacteos</x:String>
+                                        <x:String>Soy intolerante a la lactosa</x:String>
+                                        <x:String>Prefiero evitar productos lacteos</x:String>
+                                    </x:Array>
+                                </Picker.ItemsSource>
+                            </Picker>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border Margin="15,0"
+                            StrokeShape="RoundRectangle, 10"
+                            Padding="10">
+                        <VerticalStackLayout>
+                            <Label FontFamily="Light"
+                                   Padding="4,0,0,0">Que te gustaria:</Label>
+                            <Picker Title="Selecciona tu preferencia">
+                                <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>Proteina</x:String>
+                                        <x:String>Creatina</x:String>
+                                        <x:String>Ambos</x:String>
+                                    </x:Array>
+                                </Picker.ItemsSource>
+                            </Picker>
+                        </VerticalStackLayout>
+                    </Border>
+
+                </VerticalStackLayout>
+            </ScrollView>
+        </Grid>
+        <Grid BackgroundColor="#212121cc" IsVisible="False">
+            <Border HeightRequest="200"
+                Margin="20,0"
+                StrokeShape="RoundRectangle, 10">
+                <Border.Shadow>
+                    <Shadow Brush="#3f3f3f"
+                Offset="0,10"
+                Radius="40"
+                Opacity="1" />
+                </Border.Shadow>
+                <VerticalStackLayout Margin="10"
+                                 Spacing="10">
+                    <Label FontFamily="Bold"
+                           Margin="20,10,0,0"
+                           TextTransform="Uppercase"
+                       HorizontalTextAlignment="Center">Gilberto, estamos preparando tu batido</Label>
+                    <Label>Proteina: 25 Gr.</Label>
+                    <Label>Creatina: 5 Gr.</Label>
+                    <Label>Preparando...</Label>
+                    <ProgressBar Progress="0.75"
+                                 ProgressColor="#a551c3"></ProgressBar>
+
+                </VerticalStackLayout>
+            </Border>
+        </Grid>
+    
+    </Grid>
+     
+
+</ContentPage>
