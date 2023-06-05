@@ -92,7 +92,7 @@
                         <VerticalStackLayout>
                             <Label FontFamily="Light"
                                    Padding="4,0,0,0">Nombre:</Label>
-                            <Entry Placeholder="Ingresa tu nombre"></Entry>
+                            <Entry Placeholder="Ingresa tu nombre" Text="{Binding Batido.Nombre}"></Entry>
                         </VerticalStackLayout>
                     </Border>
                     <Border Margin="15,0"
@@ -102,7 +102,7 @@
                             <Label FontFamily="Light"
                                    Padding="4,0,0,0">Edad:</Label>
                             <Entry Placeholder="Ingresa tu edad"
-                                   Keyboard="Numeric"></Entry>
+                                   Keyboard="Numeric" Text="{Binding Batido.Edad}"></Entry>
                         </VerticalStackLayout>
                     </Border>
                     <Border Margin="15,0"
@@ -112,7 +112,7 @@
                             <Label FontFamily="Light"
                                    Padding="4,0,0,0">Peso (En Kg.):</Label>
                             <Entry Placeholder="Ingresa tu peso"
-                                   Keyboard="Numeric"></Entry>
+                                   Keyboard="Numeric" Text="{Binding Batido.Peso}"></Entry>
                         </VerticalStackLayout>
                     </Border>
 
@@ -125,7 +125,7 @@
                             <Label FontFamily="Light"
                                    Padding="4,0,0,0">Estatura (En cm.):</Label>
                             <Entry Placeholder="Registra tu estatura"
-                                   Keyboard="Numeric"></Entry>
+                                   Keyboard="Numeric" Text="{Binding Batido.Estatura}"></Entry>
                         </VerticalStackLayout>
                     </Border>
                     <Border Margin="15,0"
@@ -214,14 +214,9 @@
                         <VerticalStackLayout>
                             <Label FontFamily="Light"
                                    Padding="4,0,0,0">Que te gustaria:</Label>
-                            <Picker Title="Selecciona tu preferencia">
-                                <Picker.ItemsSource>
-                                    <x:Array Type="{x:Type x:String}">
-                                        <x:String>Proteina</x:String>
-                                        <x:String>Creatina</x:String>
-                                        <x:String>Ambos</x:String>
-                                    </x:Array>
-                                </Picker.ItemsSource>
+                            <Picker Title="Selecciona tu preferencia" 
+                                    ItemsSource="{Binding Adittivos}"
+                                    SelectedItem="{Binding Aditivo}">
                             </Picker>
                         </VerticalStackLayout>
                     </Border>
@@ -254,11 +249,12 @@
                     <Label FontFamily="Bold"
                            Margin="20,10,0,0"
                            TextTransform="Uppercase"
-                       HorizontalTextAlignment="Center">Gilberto, estamos preparando tu batido</Label>
-                    <Label>Proteina: 25 Gr.</Label>
-                    <Label>Creatina: 5 Gr.</Label>
-                    <Label>Preparando...</Label>
-                    <ProgressBar Progress="0.75"
+                       HorizontalTextAlignment="Center"
+                           Text="{Binding MensajeNombre}"></Label>
+                    <Label Text="{Binding MensajeProteina}"></Label>
+                    <Label Text="{Binding MensajeCreatina}"></Label>
+                    <Label Text="{Binding Estado}"></Label>
+                    <ProgressBar Progress="{Binding Porcentaje}"
                                  ProgressColor="#a551c3"></ProgressBar>
 
                 </VerticalStackLayout>
