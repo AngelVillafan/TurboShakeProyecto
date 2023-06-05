@@ -2,7 +2,11 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TurboShakeApp.MainPage"
+             xmlns:vm="clr-namespace:TurboShakeApp.ViewModels"
              Shell.NavBarIsVisible="False">
+    <ContentPage.BindingContext>
+        <vm:BatidoViewModel></vm:BatidoViewModel>
+    </ContentPage.BindingContext>
     <ContentPage.Resources>
         <Style TargetType="Label">
             <Setter Property="TextColor" Value="#a551c3"></Setter>
@@ -68,12 +72,14 @@
             </Border>
             <StackLayout Grid.Row="2">
                 <Button BackgroundColor="#a551c3"
+                        Command="{Binding CorrerCommand}"
                 Margin="20,10,20, 0"
                 FontFamily="Bold"
                 TextTransform="Uppercase"
                 Text="Hacer batido"></Button>
                 <Label HorizontalTextAlignment="Center"
-                       Margin="0,10">Errores</Label>
+                       Margin="0,10"
+                       Text="{Binding Error}"></Label>
             </StackLayout>
           
             <ScrollView Grid.Row="1">
@@ -223,7 +229,17 @@
                 </VerticalStackLayout>
             </ScrollView>
         </Grid>
-        <Grid BackgroundColor="#212121cc" IsVisible="False">
+        <Grid BackgroundColor="#212121cc">
+            <Grid.Resources>
+                <Style TargetType="Grid">
+                    <Setter Property="IsVisible" Value="False"></Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding MostrandoProgreso}" Value="True" TargetType="Grid">
+                            <Setter Property="IsVisible" Value="True"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Resources>
             <Border HeightRequest="200"
                 Margin="20,0"
                 StrokeShape="RoundRectangle, 10">

@@ -11,12 +11,7 @@ namespace TurboShakeApp.Models
         Femenino,
         Masculino
     }
-    public enum Aditivos
-    {
-        Proteina,
-        Creatina,
-        Ambos
-    }
+
     public class Batido
     {
         public string Nombre { get; set; }
@@ -25,5 +20,6 @@ namespace TurboShakeApp.Models
         public double Estatura { get; set; }
         public Sexo Sexo { get; set;}
         public byte ActividadFisicaSemanal { get; set; }
+        public string Aditivos { get; set; }
     }
 }
